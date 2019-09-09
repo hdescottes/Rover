@@ -8,6 +8,6 @@ import com.test.rover.model.Rover;
 public class Location {
 
     public static String showLocation(Rover rover) {
-        return rover.getX() + " " + rover.getY() + " " + rover.getDirection().getShortName();
+        return rover.getX() + " " + rover.getY() + " " + rover.getDirection();
     }
 }

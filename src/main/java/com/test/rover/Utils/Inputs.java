@@ -1,5 +1,6 @@
 package com.test.rover.Utils;
 
+import com.test.rover.Constant.Command;
 import com.test.rover.Constant.Direction;
 import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
@@ -17,7 +18,8 @@ public class Inputs {
 
     public static ArrayList<String> parseInputFromFile(InputStream fileLocation) {
         ArrayList<String> inputsFromFile = new ArrayList<>();
-        Stream.of(fileLocation).flatMap(f -> new BufferedReader(new InputStreamReader(f)).lines())
+        Stream.of(fileLocation)
+                .flatMap(f -> new BufferedReader(new InputStreamReader(f)).lines())
                 .forEach(inputsFromFile::add);
 
         return inputsFromFile;
@@ -33,6 +35,16 @@ public class Inputs {
         return new Rover(plateau, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), Direction.valueOf(inputArray[2]));
     }
 
-    // Add a parse Command here
+    public static ArrayList<String> parseCommandInput(String command) {
+        char[] inputArray = command.toCharArray();
+        ArrayList<String> commandArrayList = new ArrayList<>();
+
+        for (char character : inputArray) {
+            String currentCommand = Command.valueOf(Character.toString(character)).getName();
+            commandArrayList.add(currentCommand);
+        }
+
+        return commandArrayList;
+    }
 
 }

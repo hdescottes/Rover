@@ -24,7 +24,8 @@ public class TestRoverApplication {
         Plateau plateau = Inputs.parsePlateauInput(inputFileAsList.get(0));
         for (int i = 0; i < roverInput.size(); i += 2) {
             Rover rover = Inputs.parsePositionInput(roverInput.get(i), plateau);
-            /*Use the parse Command*/
+            ArrayList<String> commands = Inputs.parseCommandInput(roverInput.get(i + 1));
+            rover.executeCommandList(commands);
             System.out.println(Location.showLocation(rover));
         }
     }

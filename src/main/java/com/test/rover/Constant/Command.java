@@ -1,36 +1,64 @@
 package com.test.rover.Constant;
 
+import com.test.rover.model.Rover;
+
+import static com.test.rover.Constant.Direction.*;
+
 /**
  * Constants used for the different possible command
  */
 public enum Command {
 
-    LEFT(0, "L"),
-    RIGHT(1, "R"),
-    FORWARD(2, "M");
+    L("LEFT"),
+    R("RIGHT"),
+    M("FORWARD");
 
-    private int value;
+    private String name;
 
-    private String shortName;
-
-    Command(int value, String shortName) {
-        this.value = value;
-        this.shortName = shortName;
+    Command(String name) {
+        this.name = name;
     }
 
-    public int getValue() {
-        return value;
+    public String getName() {
+        return name;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getShortName() {
-        return shortName;
+    public static Direction spinRight(Rover rover, Direction direction) {
+        if (direction == N) {
+            return rover.setDirection(E);
+        } else if (direction == E) {
+            return rover.setDirection(S);
+        } else if (direction == S) {
+            return rover.setDirection(W);
+        } else {
+            return rover.setDirection(N);
+        }
     }
 
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
+    public static Direction spinLeft(Rover rover, Direction direction) {
+        if (direction == N) {
+            return rover.setDirection(W);
+        } else if (direction == E) {
+            return rover.setDirection(N);
+        } else if (direction == S) {
+            return rover.setDirection(E);
+        } else {
+            return rover.setDirection(S);
+        }
     }
+
+    public static int forward(Rover rover, Direction direction) {
+        if (direction.equals(E)) {
+            return rover.setX(rover.getX() +1);
+        } else if (direction.equals(W)) {
+            return rover.setX(rover.getX() - 1);
+        } else if (direction.equals(N)) {
+            return rover.setY(rover.getY() + 1);
+        } else return rover.setY(rover.getY() - 1);
+    }
+
 }
