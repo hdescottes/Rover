@@ -27,38 +27,40 @@ public enum Command {
         this.name = name;
     }
 
-    public static Direction spinRight(Rover rover, Direction direction) {
+    public static void spinRight(Rover rover, Direction direction) {
         if (direction == N) {
-            return rover.setDirection(E);
+            rover.setDirection(E);
         } else if (direction == E) {
-            return rover.setDirection(S);
+            rover.setDirection(S);
         } else if (direction == S) {
-            return rover.setDirection(W);
+            rover.setDirection(W);
         } else {
-            return rover.setDirection(N);
+            rover.setDirection(N);
         }
     }
 
-    public static Direction spinLeft(Rover rover, Direction direction) {
+    public static void spinLeft(Rover rover, Direction direction) {
         if (direction == N) {
-            return rover.setDirection(W);
+            rover.setDirection(W);
         } else if (direction == E) {
-            return rover.setDirection(N);
+            rover.setDirection(N);
         } else if (direction == S) {
-            return rover.setDirection(E);
+            rover.setDirection(E);
         } else {
-            return rover.setDirection(S);
+            rover.setDirection(S);
         }
     }
 
-    public static int forward(Rover rover, Direction direction) {
+    public static void forward(Rover rover, Direction direction) {
         if (direction.equals(E)) {
-            return rover.setX(rover.getX() +1);
+            rover.setX(rover.getX() + 1);
         } else if (direction.equals(W)) {
-            return rover.setX(rover.getX() - 1);
+            rover.setX(rover.getX() - 1);
         } else if (direction.equals(N)) {
-            return rover.setY(rover.getY() + 1);
-        } else return rover.setY(rover.getY() - 1);
+            rover.setY(rover.getY() + 1);
+        } else {
+            rover.setY(rover.getY() - 1);
+        }
     }
 
 }

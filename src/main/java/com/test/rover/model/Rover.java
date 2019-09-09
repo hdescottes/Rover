@@ -35,27 +35,24 @@ public class Rover {
         return x;
     }
 
-    public int setX(int x) {
+    public void setX(int x) {
         this.x = x;
-        return x;
     }
 
     public int getY() {
         return y;
     }
 
-    public int setY(int y) {
+    public void setY(int y) {
         this.y = y;
-        return y;
     }
 
     public Direction getDirection() {
         return direction;
     }
 
-    public Direction setDirection(Direction direction) {
+    public void setDirection(Direction direction) {
         this.direction = direction;
-        return direction;
     }
 
     public void executeCommandList(ArrayList<String> commands) {
