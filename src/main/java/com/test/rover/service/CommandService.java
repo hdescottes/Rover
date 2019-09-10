@@ -11,38 +11,32 @@ import static com.test.rover.constant.Direction.*;
 public class CommandService {
 
     void spinRight(Rover rover, Direction direction) {
-        if (direction == N) {
-            rover.setDirection(E);
-        } else if (direction == E) {
-            rover.setDirection(S);
-        } else if (direction == S) {
-            rover.setDirection(W);
-        } else {
-            rover.setDirection(N);
+        switch (direction) {
+            case N: rover.setDirection(E); break;
+            case E: rover.setDirection(S); break;
+            case S: rover.setDirection(W); break;
+            case W: rover.setDirection(N); break;
+            default: throw new IllegalArgumentException ("Invalid direction type: " + direction);
         }
     }
 
     void spinLeft(Rover rover, Direction direction) {
-        if (direction == N) {
-            rover.setDirection(W);
-        } else if (direction == E) {
-            rover.setDirection(N);
-        } else if (direction == S) {
-            rover.setDirection(E);
-        } else {
-            rover.setDirection(S);
+        switch (direction) {
+            case N: rover.setDirection(W); break;
+            case E: rover.setDirection(N); break;
+            case S: rover.setDirection(E); break;
+            case W: rover.setDirection(S); break;
+            default: throw new IllegalArgumentException ("Invalid direction type: " + direction);
         }
     }
 
     void forward(Rover rover, Direction direction) {
-        if (direction.equals(E)) {
-            rover.setX(rover.getX() + 1);
-        } else if (direction.equals(W)) {
-            rover.setX(rover.getX() - 1);
-        } else if (direction.equals(N)) {
-            rover.setY(rover.getY() + 1);
-        } else {
-            rover.setY(rover.getY() - 1);
+        switch (direction) {
+            case E: rover.setX(rover.getX() + 1); break;
+            case W: rover.setX(rover.getX() - 1); break;
+            case N: rover.setY(rover.getY() + 1); break;
+            case S: rover.setY(rover.getY() - 1); break;
+            default: throw new IllegalArgumentException ("Invalid direction type: " + direction);
         }
     }
 }

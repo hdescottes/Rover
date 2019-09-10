@@ -5,11 +5,18 @@ package com.test.rover.constant;
  */
 public enum Direction {
 
-    N(1, "y"),
-    E(1, "x"),
-    S(-1, "y"),
-    W(-1, "x");
+    N("NORTH"),
+    E("EAST"),
+    S("SOUTH"),
+    W("WEST");
 
-    Direction(int value, String directionLook) {
+    private String name;
+
+    Direction(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }

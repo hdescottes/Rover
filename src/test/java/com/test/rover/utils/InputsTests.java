@@ -1,22 +1,25 @@
 package com.test.rover.utils;
 
+import com.test.rover.CommonTests;
 import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 import org.junit.jupiter.api.Test;
 
-import java.io.InputStream;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class InputsTests {
-
-    private final Plateau plateau = new Plateau(5, 5);
+class InputsTests extends CommonTests {
 
     @Test
-    void parseInputFromFile_ShouldSucceed() {
-        InputStream testFileInputStream = getClass().getResourceAsStream("/testInputs.txt");
-        ArrayList<String> testFileLines = Inputs.parseInputFromFile(testFileInputStream);
+    void parseInputFromFile_ShouldSucceed() throws URISyntaxException, IOException {
+        String dest = Paths.get(Objects.requireNonNull(getClass().getClassLoader().getResource("testInputs.txt")).toURI()).toString();
+        List<String> testFileLines = Inputs.parseInputFromFile(dest);
 
         assertEquals(5, testFileLines.size());
         assertEquals("5 5", testFileLines.get(0));
@@ -40,7 +43,7 @@ class InputsTests {
     @Test
     void parsePositionInput_ShouldSucceed() {
         String positionInput = "1 2 N";
-        Rover roverOutput = Inputs.parsePositionInput(positionInput, plateau);
+        Rover roverOutput = Inputs.parsePositionInput(positionInput, createPlateau());
 
         assertEquals(1, roverOutput.getX());
         assertEquals(2, roverOutput.getY());

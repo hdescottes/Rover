@@ -1,20 +1,25 @@
 package com.test.rover;
 
+import com.test.rover.model.Plateau;
+import com.test.rover.model.Rover;
 import com.test.rover.service.CommandService;
 import com.test.rover.service.RoverService;
 import com.test.rover.utils.Inputs;
 import com.test.rover.utils.Location;
-import com.test.rover.model.Plateau;
-import com.test.rover.model.Rover;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Stream;
 
 public class TestRoverApplication {
 
-    public static void main(String[] args) {
-        ArrayList<String> inputFileAsList = Inputs.parseInputFromFile(TestRoverApplication.class.getResourceAsStream("/inputs.txt"));
+    public static void main(String[] args) throws IOException, URISyntaxException {
+        String dest = Paths.get(Objects.requireNonNull(TestRoverApplication.class.getClassLoader().getResource("inputs.txt")).toURI()).toString();
+        List<String> inputFileAsList = Inputs.parseInputFromFile(dest);
         List<String> roverInput = inputFileAsList.subList(1, inputFileAsList.size());
 
         System.out.println("Input:" + "\n");

@@ -1,9 +1,5 @@
 package com.test.rover.constant;
 
-import com.test.rover.model.Rover;
-
-import static com.test.rover.constant.Direction.*;
-
 /**
  * Constants used for the different possible command
  */
