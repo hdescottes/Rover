@@ -1,10 +1,6 @@
 package com.test.rover.model;
 
-import com.test.rover.Constant.Direction;
-
-import java.util.ArrayList;
-
-import static com.test.rover.Constant.Command.*;
+import com.test.rover.constant.Direction;
 
 /**
  * Business representation of a rover
@@ -53,17 +49,6 @@ public class Rover {
 
     public void setDirection(Direction direction) {
         this.direction = direction;
-    }
-
-    public void executeCommandList(ArrayList<String> commands) {
-        for (String command : commands)
-            if (command.equals(L.getName())) {
-                spinLeft(this, this.getDirection());
-            } else if (command.equals(R.getName())) {
-                spinRight(this, this.getDirection());
-            } else if (command.equals(M.getName())) {
-                forward(this, this.getDirection());
-            }
     }
 
 }

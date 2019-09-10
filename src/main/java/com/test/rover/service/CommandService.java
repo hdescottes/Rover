@@ -1,33 +1,16 @@
-package com.test.rover.Constant;
+package com.test.rover.service;
 
+import com.test.rover.constant.Direction;
 import com.test.rover.model.Rover;
 
-import static com.test.rover.Constant.Direction.*;
+import static com.test.rover.constant.Direction.*;
 
 /**
- * Constants used for the different possible command
+ * Business logic related to the command
  */
-public enum Command {
+public class CommandService {
 
-    L("LEFT"),
-    R("RIGHT"),
-    M("FORWARD");
-
-    private String name;
-
-    Command(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public static void spinRight(Rover rover, Direction direction) {
+    void spinRight(Rover rover, Direction direction) {
         if (direction == N) {
             rover.setDirection(E);
         } else if (direction == E) {
@@ -39,7 +22,7 @@ public enum Command {
         }
     }
 
-    public static void spinLeft(Rover rover, Direction direction) {
+    void spinLeft(Rover rover, Direction direction) {
         if (direction == N) {
             rover.setDirection(W);
         } else if (direction == E) {
@@ -51,7 +34,7 @@ public enum Command {
         }
     }
 
-    public static void forward(Rover rover, Direction direction) {
+    void forward(Rover rover, Direction direction) {
         if (direction.equals(E)) {
             rover.setX(rover.getX() + 1);
         } else if (direction.equals(W)) {
@@ -62,5 +45,4 @@ public enum Command {
             rover.setY(rover.getY() - 1);
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package com.test.rover.Utils;
+package com.test.rover.utils;
 
 import com.test.rover.model.Rover;
 

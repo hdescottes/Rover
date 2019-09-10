@@ -1,4 +1,4 @@
-package com.test.rover.Constant;
+package com.test.rover.constant;
 
 /**
  * Constants used for the different possible direction

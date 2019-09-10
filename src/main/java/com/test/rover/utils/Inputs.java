@@ -1,7 +1,7 @@
-package com.test.rover.Utils;
+package com.test.rover.utils;
 
-import com.test.rover.Constant.Command;
-import com.test.rover.Constant.Direction;
+import com.test.rover.constant.Command;
+import com.test.rover.constant.Direction;
 import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 
@@ -38,6 +38,9 @@ public class Inputs {
     public static ArrayList<String> parseCommandInput(String command) {
         char[] inputArray = command.toCharArray();
         ArrayList<String> commandArrayList = new ArrayList<>();
+/*
+        Stream.of(inputArray)
+                .forEach(i -> commandArrayList.add(Command.valueOf(Character.toString(i)).getName()));*/
 
         for (char character : inputArray) {
             String currentCommand = Command.valueOf(Character.toString(character)).getName();
