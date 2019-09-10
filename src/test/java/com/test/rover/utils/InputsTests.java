@@ -38,12 +38,22 @@ class InputsTests {
     }
 
     @Test
-    void whenPositionInputIsParsedRoverIsConstructed() {
+    void parsePositionInput_ShouldSucceed() {
         String positionInput = "1 2 N";
         Rover roverOutput = Inputs.parsePositionInput(positionInput, plateau);
 
         assertEquals(1, roverOutput.getX());
         assertEquals(2, roverOutput.getY());
-        //direction to be tested
+        assertEquals("N", roverOutput.getDirection().toString());
+    }
+
+    @Test
+    void parseCommandInput_ShouldSucceed() {
+        String commandInput = "LMLMRMLMM";
+        ArrayList<String> commandOutput = Inputs.parseCommandInput(commandInput);
+
+        assertEquals("LEFT", commandOutput.get(2));
+        assertEquals("RIGHT", commandOutput.get(4));
+        assertEquals("FORWARD", commandOutput.get(7));
     }
 }
