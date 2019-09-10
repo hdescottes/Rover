@@ -23,11 +23,13 @@ public class Inputs {
 
     public static Plateau parsePlateauInput(String plateauInput) {
         String[] inputArray = plateauInput.split(" ");
+        Location.checkPlateau(inputArray);
         return new Plateau(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]));
     }
 
     public static Rover parsePositionInput(String positionInput, Plateau plateau) {
         String[] inputArray = positionInput.split(" ");
+        Location.checkPosition(inputArray, plateau);
         return new Rover(plateau, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), Direction.valueOf(inputArray[2]));
     }
 
