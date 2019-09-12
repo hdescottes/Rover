@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 /**
  * Some useful methods for the inputs
  */
-public class Inputs {
+public class InputsUtils {
 
     public static List<String> parseInputFromFile(String fileLocation) throws IOException {
         return Files.lines(Paths.get(fileLocation)).collect(Collectors.toList());
@@ -23,13 +23,13 @@ public class Inputs {
 
     public static PlateauDto parsePlateauInput(String plateauInput) {
         String[] inputArray = plateauInput.split(" ");
-        Location.checkPlateau(inputArray);
+        LocationUtils.checkPlateau(inputArray);
         return new PlateauDto(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]));
     }
 
     public static RoverDto parsePositionInput(String positionInput, PlateauDto plateauDto) {
         String[] inputArray = positionInput.split(" ");
-        Location.checkPosition(inputArray, plateauDto);
+        LocationUtils.checkPosition(inputArray, plateauDto);
         return new RoverDto(plateauDto, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), DirectionEnum.valueOf(inputArray[2]).getDirection());
     }
 

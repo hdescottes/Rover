@@ -3,11 +3,11 @@ package com.test.rover.utils;
 import com.test.rover.CommonTests;
 import org.junit.jupiter.api.Test;
 
-import static com.test.rover.utils.Location.checkPlateau;
-import static com.test.rover.utils.Location.checkPosition;
+import static com.test.rover.utils.LocationUtils.checkPlateau;
+import static com.test.rover.utils.LocationUtils.checkPosition;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 
-class LocationTests extends CommonTests {
+class LocationUtilsTests extends CommonTests {
 
     @Test
     void checkPlateau_ShoulfFailedCauzNullCoordinates() {

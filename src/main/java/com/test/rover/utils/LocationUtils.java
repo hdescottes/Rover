@@ -6,7 +6,7 @@ import com.test.rover.model.RoverDto;
 /**
  * Some useful methods for the location
  */
-public class Location {
+public class LocationUtils {
 
     public static String showLocation(RoverDto roverDto) {
         return roverDto.getX() + " " + roverDto.getY() + " " + roverDto.getDirection().getClass().getSimpleName().charAt(0);
