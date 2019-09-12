@@ -27,23 +27,23 @@ the roverDto how to explore the plateauDto.
 The position is made up of two integers and a letter separated by spaces,
 corresponding to the x and y co-ordinates and the roverDto's orientation.
 Each roverDto will be finished sequentially, which means that the second roverDto
-won't start to move until the first one has finished moving.
+won't start to move until the first one has finished moving.</br>
 
 OUTPUT:
-<br>The output for each roverDto should be its final co-ordinates and heading.
+<br>The output for each roverDto should be its final co-ordinates and heading.</br>
 
 INPUT AND OUTPUT
-<br>Test Input:
-<br>5 5
-<br>1 2 N
-<br>LMLMLMLMM
-<br>3 3 E
-<br>MMRMMRMRRM
-<br>Expected Output:
-<br>1 3 N
-<br>5 1 E
+<br>Test Input:</br>
+<br>5 5</br>
+<br>1 2 N</br>
+<br>LMLMLMLMM</br>
+<br>3 3 E</br>
+<br>MMRMMRMRRM</br>
+<br>Expected Output:</br>
+<br>1 3 N</br>
+<br>5 1 E</br>
 
 COMMAND LINE:
-<br>The program will be runned with this command line:
+<br>The program will be runned with this command line:</br>
 
  	java -jar Rover.jar inputs.txt
