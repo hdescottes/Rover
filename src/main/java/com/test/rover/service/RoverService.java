@@ -13,21 +13,18 @@ public class RoverService {
 
     private Rover rover;
 
-    private CommandService commandService;
-
-    public RoverService(Rover rover, CommandService commandService) {
+    public RoverService(Rover rover) {
         this.rover = rover;
-        this.commandService = commandService;
     }
 
     public void executeCommandList(ArrayList<String> commands) {
         for (String command : commands)
             if (command.equals(L.getName())) {
-                commandService.spinLeft(rover, rover.getDirection());
+                rover.setDirection(rover.getDirection().spinLeft(rover));
             } else if (command.equals(R.getName())) {
-                commandService.spinRight(rover, rover.getDirection());
+                rover.setDirection(rover.getDirection().spinRight(rover));
             } else if (command.equals(M.getName())) {
-                commandService.forward(rover, rover.getDirection());
+                rover.getDirection().moveForward(rover);
             }
     }
 }

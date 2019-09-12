@@ -1,7 +1,7 @@
 package com.test.rover.utils;
 
 import com.test.rover.constant.Command;
-import com.test.rover.constant.Direction;
+import com.test.rover.direction.DirectionEnum;
 import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 
@@ -30,7 +30,7 @@ public class Inputs {
     public static Rover parsePositionInput(String positionInput, Plateau plateau) {
         String[] inputArray = positionInput.split(" ");
         Location.checkPosition(inputArray, plateau);
-        return new Rover(plateau, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), Direction.valueOf(inputArray[2]));
+        return new Rover(plateau, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), DirectionEnum.valueOf(inputArray[2]).getDirection());
     }
 
     public static ArrayList<String> parseCommandInput(String command) {

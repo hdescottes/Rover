@@ -6,14 +6,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
-import static com.test.rover.constant.Direction.N;
+import static com.test.rover.direction.DirectionEnum.N;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RoverServiceTests extends CommonTests {
 
-    private Rover rover = createRover(N);
+    private Rover rover = createRover(N.getDirection());
 
-    private RoverService roverServiceTest = new RoverService(rover, new CommandService());
+    private RoverService roverServiceTest = new RoverService(rover);
 
     @Test
     void executeCommandList_ShouldSucceed() {
@@ -21,6 +21,6 @@ class RoverServiceTests extends CommonTests {
         roverServiceTest.executeCommandList(commands);
         assertEquals(0, rover.getX());
         assertEquals(2, rover.getY());
-        assertEquals(N, rover.getDirection());
+        assertEquals(N.getDirection().getClass(), rover.getDirection().getClass());
     }
 }

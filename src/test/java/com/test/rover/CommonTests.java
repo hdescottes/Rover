@@ -1,6 +1,6 @@
 package com.test.rover;
 
-import com.test.rover.constant.Direction;
+import com.test.rover.direction.Direction;
 import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 

@@ -1,6 +1,6 @@
 package com.test.rover.model;
 
-import com.test.rover.constant.Direction;
+import com.test.rover.direction.Direction;
 
 /**
  * Business representation of a rover

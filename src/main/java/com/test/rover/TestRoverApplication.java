@@ -2,7 +2,6 @@ package com.test.rover;
 
 import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
-import com.test.rover.service.CommandService;
 import com.test.rover.service.RoverService;
 import com.test.rover.utils.Inputs;
 import com.test.rover.utils.Location;
@@ -30,7 +29,7 @@ public class TestRoverApplication {
         Plateau plateau = Inputs.parsePlateauInput(inputFileAsList.get(0));
         for (int i = 0; i < roverInput.size(); i += 2) {
             Rover rover = Inputs.parsePositionInput(roverInput.get(i), plateau);
-            RoverService roverService = new RoverService(rover, new CommandService());
+            RoverService roverService = new RoverService(rover);
             ArrayList<String> commands = Inputs.parseCommandInput(roverInput.get(i + 1));
             roverService.executeCommandList(commands);
             System.out.println(Location.showLocation(rover));

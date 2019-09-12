@@ -9,7 +9,7 @@ import com.test.rover.model.Rover;
 public class Location {
 
     public static String showLocation(Rover rover) {
-        return rover.getX() + " " + rover.getY() + " " + rover.getDirection();
+        return rover.getX() + " " + rover.getY() + " " + rover.getDirection().getClass().getSimpleName().charAt(0);
     }
 
     static void checkPlateau(String[] inputArray) {

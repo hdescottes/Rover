@@ -47,7 +47,7 @@ class InputsTests extends CommonTests {
 
         assertEquals(1, roverOutput.getX());
         assertEquals(2, roverOutput.getY());
-        assertEquals("N", roverOutput.getDirection().toString());
+        assertEquals('N', roverOutput.getDirection().getClass().getSimpleName().charAt(0));
     }
 
     @Test
