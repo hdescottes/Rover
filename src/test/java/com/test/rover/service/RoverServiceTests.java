@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import static com.test.rover.direction.DirectionEnum.N;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class RoverDtoServiceTests extends CommonTests {
+class RoverServiceTests extends CommonTests {
 
     private RoverDto roverDto = createRover(N.getDirection());
 
