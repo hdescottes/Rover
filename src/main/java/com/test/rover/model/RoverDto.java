@@ -5,9 +5,9 @@ import com.test.rover.direction.Direction;
 /**
  * Business representation of a rover
  */
-public class Rover {
+public class RoverDto {
 
-    private final Plateau plateau;
+    private final PlateauDto plateauDto;
 
     private int x;
 
@@ -15,16 +15,16 @@ public class Rover {
 
     private Direction direction;
 
-    public Rover(Plateau plateau, int x, int y, Direction direction) {
+    public RoverDto(PlateauDto plateauDto, int x, int y, Direction direction) {
 
-        this.plateau = plateau;
+        this.plateauDto = plateauDto;
         this.x = x;
         this.y = y;
         this.direction = direction;
     }
 
-    public Plateau getPlateau() {
-        return plateau;
+    public PlateauDto getPlateauDto() {
+        return plateauDto;
     }
 
     public int getX() {

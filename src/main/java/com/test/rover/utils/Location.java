@@ -1,15 +1,15 @@
 package com.test.rover.utils;
 
-import com.test.rover.model.Plateau;
-import com.test.rover.model.Rover;
+import com.test.rover.model.PlateauDto;
+import com.test.rover.model.RoverDto;
 
 /**
  * Some useful methods for the location
  */
 public class Location {
 
-    public static String showLocation(Rover rover) {
-        return rover.getX() + " " + rover.getY() + " " + rover.getDirection().getClass().getSimpleName().charAt(0);
+    public static String showLocation(RoverDto roverDto) {
+        return roverDto.getX() + " " + roverDto.getY() + " " + roverDto.getDirection().getClass().getSimpleName().charAt(0);
     }
 
     static void checkPlateau(String[] inputArray) {
@@ -18,8 +18,8 @@ public class Location {
         }
     }
 
-    static void checkPosition(String[] inputArray, Plateau plateau) {
-        if (inputArray[0].isEmpty() || inputArray[1].isEmpty() || Integer.parseInt(inputArray[0]) > plateau.getUpperX() || Integer.parseInt(inputArray[1]) > plateau.getUpperY()) {
+    static void checkPosition(String[] inputArray, PlateauDto plateauDto) {
+        if (inputArray[0].isEmpty() || inputArray[1].isEmpty() || Integer.parseInt(inputArray[0]) > plateauDto.getUpperX() || Integer.parseInt(inputArray[1]) > plateauDto.getUpperY()) {
             throw new IllegalArgumentException("The rover's coordinates must not be null or beyond plateau's ones");
         }
     }

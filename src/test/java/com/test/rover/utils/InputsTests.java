@@ -1,8 +1,8 @@
 package com.test.rover.utils;
 
 import com.test.rover.CommonTests;
-import com.test.rover.model.Plateau;
-import com.test.rover.model.Rover;
+import com.test.rover.model.PlateauDto;
+import com.test.rover.model.RoverDto;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -32,22 +32,22 @@ class InputsTests extends CommonTests {
     @Test
     void parsePlateauInput_ShouldSucceed() {
         String plateauInput = "5 5";
-        Plateau plateauOutput = Inputs.parsePlateauInput(plateauInput);
+        PlateauDto plateauDtoOutput = Inputs.parsePlateauInput(plateauInput);
 
-        assertEquals(0, plateauOutput.getOriginX());
-        assertEquals(0, plateauOutput.getOriginY());
-        assertEquals(5, plateauOutput.getUpperX());
-        assertEquals(5, plateauOutput.getUpperY());
+        assertEquals(0, plateauDtoOutput.getOriginX());
+        assertEquals(0, plateauDtoOutput.getOriginY());
+        assertEquals(5, plateauDtoOutput.getUpperX());
+        assertEquals(5, plateauDtoOutput.getUpperY());
     }
 
     @Test
     void parsePositionInput_ShouldSucceed() {
         String positionInput = "1 2 N";
-        Rover roverOutput = Inputs.parsePositionInput(positionInput, createPlateau());
+        RoverDto roverDtoOutput = Inputs.parsePositionInput(positionInput, createPlateau());
 
-        assertEquals(1, roverOutput.getX());
-        assertEquals(2, roverOutput.getY());
-        assertEquals('N', roverOutput.getDirection().getClass().getSimpleName().charAt(0));
+        assertEquals(1, roverDtoOutput.getX());
+        assertEquals(2, roverDtoOutput.getY());
+        assertEquals('N', roverDtoOutput.getDirection().getClass().getSimpleName().charAt(0));
     }
 
     @Test

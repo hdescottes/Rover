@@ -3,7 +3,7 @@ package com.test.rover.constant;
 /**
  * Constants used for the different possible command
  */
-public enum Command {
+public enum CommandEnum {
 
     L("LEFT"),
     R("RIGHT"),
@@ -11,7 +11,7 @@ public enum Command {
 
     private String name;
 
-    Command(String name) {
+    CommandEnum(String name) {
         this.name = name;
     }
 

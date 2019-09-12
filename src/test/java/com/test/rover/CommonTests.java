@@ -1,12 +1,12 @@
 package com.test.rover;
 
 import com.test.rover.direction.Direction;
-import com.test.rover.model.Plateau;
-import com.test.rover.model.Rover;
+import com.test.rover.model.PlateauDto;
+import com.test.rover.model.RoverDto;
 
 import java.util.ArrayList;
 
-import static com.test.rover.constant.Command.*;
+import static com.test.rover.constant.CommandEnum.*;
 
 public class CommonTests {
 
@@ -15,12 +15,12 @@ public class CommonTests {
     protected int x = 1;
     protected int y = 2;
 
-    protected Plateau createPlateau() {
-        return new Plateau(upperX, upperY);
+    protected PlateauDto createPlateau() {
+        return new PlateauDto(upperX, upperY);
     }
 
-    protected Rover createRover(Direction direction) {
-        return new Rover(createPlateau(), x, y, direction);
+    protected RoverDto createRover(Direction direction) {
+        return new RoverDto(createPlateau(), x, y, direction);
     }
 
     protected ArrayList<String> createCommandList() {

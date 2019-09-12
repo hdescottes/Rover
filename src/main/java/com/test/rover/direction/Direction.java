@@ -1,13 +1,13 @@
 package com.test.rover.direction;
 
-import com.test.rover.model.Rover;
+import com.test.rover.model.RoverDto;
 
 public interface Direction {
 
-    Direction spinRight(Rover rover);
+    Direction spinRight(RoverDto roverDto);
 
-    Direction spinLeft(Rover rover);
+    Direction spinLeft(RoverDto roverDto);
 
-    void moveForward(Rover rover);
+    void moveForward(RoverDto roverDto);
 
 }
