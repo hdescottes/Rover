@@ -33,15 +33,15 @@ OUTPUT:
 <br>The output for each rover should be its final co-ordinates and heading.</br>
 
 INPUT AND OUTPUT
-<br>Test Input:</br>
-<br>5 5</br>
-<br>1 2 N</br>
-<br>LMLMLMLMM</br>
-<br>3 3 E</br>
-<br>MMRMMRMRRM</br>
-<br>Expected Output:</br>
-<br>1 3 N</br>
-<br>5 1 E</br>
+<br>Test Input:
+<br>5 5
+<br>1 2 N
+<br>LMLMLMLMM
+<br>3 3 E
+<br>MMRMMRMRRM
+<br>Expected Output:
+<br>1 3 N
+<br>5 1 E
 
 COMMAND LINE:
 <br>The program will be runned with this command line:</br>
