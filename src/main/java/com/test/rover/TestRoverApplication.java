@@ -18,8 +18,7 @@ import java.util.stream.Stream;
 public class TestRoverApplication {
 
     public static void main(String[] args) throws IOException, URISyntaxException {
-        String dest = Paths.get(Objects.requireNonNull(TestRoverApplication.class.getClassLoader().getResource("inputs.txt")).toURI()).toString();
-        List<String> inputFileAsList = InputsUtils.parseInputFromFile(dest);
+        List<String> inputFileAsList = InputsUtils.parseInputFromFile(Paths.get(Objects.requireNonNull(TestRoverApplication.class.getClassLoader().getResource("inputs.txt")).toURI()).toString());
         List<String> roverInput = inputFileAsList.subList(1, inputFileAsList.size());
 
         System.out.println("Input:" + "\n");
