@@ -23,5 +23,4 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
     testImplementation("org.assertj:assertj-core:3.8.0")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
-    testRuntimeOnly("org.junit.platform:junit-platform-engine:1.5.2")
 }
