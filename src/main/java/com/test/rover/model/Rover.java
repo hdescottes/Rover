@@ -2,8 +2,6 @@ package com.test.rover.model;
 
 import com.test.rover.direction.Direction;
 
-import java.util.stream.Stream;
-
 /**
  * Business representation of a rover
  */

@@ -10,7 +10,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 class LocationUtilsTests extends CommonTests {
 
     @Test
-    void checkPlateau_ShoulfFailedCauzNullCoordinates() {
+    void checkPlateau_ShouldFailedCauzNullCoordinates() {
         String[] inputArray = new String[2];
         inputArray[0] = "0";
         inputArray[1] = "0";
@@ -18,7 +18,7 @@ class LocationUtilsTests extends CommonTests {
     }
 
     @Test
-    void checkPosition_ShoulfFailedCauzRoverIsBeyondPlateau() {
+    void checkPosition_ShouldFailedCauzRoverIsBeyondPlateau() {
         String[] inputArray = new String[2];
         inputArray[0] = "3";
         inputArray[1] = "9";
