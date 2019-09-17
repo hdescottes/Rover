@@ -1,15 +1,15 @@
 package com.test.rover.utils;
 
 import com.test.rover.model.PlateauDto;
-import com.test.rover.model.RoverDto;
+import com.test.rover.model.Rover;
 
 /**
  * Some useful methods for the location
  */
 public class LocationUtils {
 
-    public static String showLocation(RoverDto roverDto) {
-        return roverDto.getX() + " " + roverDto.getY() + " " + roverDto.getDirection().getClass().getSimpleName().charAt(0);
+    public static String showLocation(Rover rover) {
+        return rover.getX() + " " + rover.getY() + " " + rover.getDirection().getClass().getSimpleName().charAt(0);
     }
 
     static void checkPlateau(String[] inputArray) {

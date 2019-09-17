@@ -2,10 +2,12 @@ package com.test.rover.model;
 
 import com.test.rover.direction.Direction;
 
+import java.util.stream.Stream;
+
 /**
  * Business representation of a rover
  */
-public class RoverDto {
+public class Rover {
 
     private final PlateauDto plateauDto;
 
@@ -15,7 +17,7 @@ public class RoverDto {
 
     private Direction direction;
 
-    public RoverDto(PlateauDto plateauDto, int x, int y, Direction direction) {
+    public Rover(PlateauDto plateauDto, int x, int y, Direction direction) {
 
         this.plateauDto = plateauDto;
         this.x = x;
@@ -49,6 +51,18 @@ public class RoverDto {
 
     public void setDirection(Direction direction) {
         this.direction = direction;
+    }
+
+    public void turnLeft() {
+        this.setDirection(direction.spinLeft(this));
+    }
+
+    public void turnRight() {
+        this.setDirection(direction.spinRight(this));
+    }
+
+    public void goForward() {
+        direction.moveForward(this);
     }
 
 }

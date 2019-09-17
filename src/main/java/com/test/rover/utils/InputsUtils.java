@@ -3,7 +3,7 @@ package com.test.rover.utils;
 import com.test.rover.constant.CommandEnum;
 import com.test.rover.direction.DirectionEnum;
 import com.test.rover.model.PlateauDto;
-import com.test.rover.model.RoverDto;
+import com.test.rover.model.Rover;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -27,18 +27,18 @@ public class InputsUtils {
         return new PlateauDto(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]));
     }
 
-    public static RoverDto parsePositionInput(String positionInput, PlateauDto plateauDto) {
+    public static Rover parsePositionInput(String positionInput, PlateauDto plateauDto) {
         String[] inputArray = positionInput.split(" ");
         LocationUtils.checkPosition(inputArray, plateauDto);
-        return new RoverDto(plateauDto, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), DirectionEnum.valueOf(inputArray[2]).getDirection());
+        return new Rover(plateauDto, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), DirectionEnum.valueOf(inputArray[2]).getDirection());
     }
 
-    public static ArrayList<String> parseCommandInput(String command) {
+    public static ArrayList<CommandEnum> parseCommandInput(String command) {
         char[] inputArray = command.toCharArray();
-        ArrayList<String> commandArrayList = new ArrayList<>();
+        ArrayList<CommandEnum> commandArrayList = new ArrayList<>();
 
         for (char character : inputArray) {
-            String currentCommand = CommandEnum.valueOf(Character.toString(character)).getName();
+            CommandEnum currentCommand = CommandEnum.valueOf(Character.toString(character));
             commandArrayList.add(currentCommand);
         }
 

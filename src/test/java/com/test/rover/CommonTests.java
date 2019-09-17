@@ -1,8 +1,9 @@
 package com.test.rover;
 
+import com.test.rover.constant.CommandEnum;
 import com.test.rover.direction.Direction;
 import com.test.rover.model.PlateauDto;
-import com.test.rover.model.RoverDto;
+import com.test.rover.model.Rover;
 
 import java.util.ArrayList;
 
@@ -19,15 +20,15 @@ public class CommonTests {
         return new PlateauDto(upperX, upperY);
     }
 
-    protected RoverDto createRover(Direction direction) {
-        return new RoverDto(createPlateau(), x, y, direction);
+    protected Rover createRover(Direction direction) {
+        return new Rover(createPlateau(), x, y, direction);
     }
 
-    protected ArrayList<String> createCommandList() {
-        ArrayList<String> commands = new ArrayList<>();
-        commands.add(L.getName());
-        commands.add(M.getName());
-        commands.add(R.getName());
+    protected ArrayList<CommandEnum> createCommandList() {
+        ArrayList<CommandEnum> commands = new ArrayList<>();
+        commands.add(L);
+        commands.add(M);
+        commands.add(R);
         return commands;
     }
 }

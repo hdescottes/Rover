@@ -1,7 +1,8 @@
 package com.test.rover.service;
 
 import com.test.rover.CommonTests;
-import com.test.rover.model.RoverDto;
+import com.test.rover.constant.CommandEnum;
+import com.test.rover.model.Rover;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -11,16 +12,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RoverServiceTests extends CommonTests {
 
-    private RoverDto roverDto = createRover(N.getDirection());
+    private Rover rover = createRover(N.getDirection());
 
-    private RoverService roverServiceTest = new RoverService(roverDto);
+    private RoverService roverServiceTest = new RoverService(rover);
 
     @Test
     void executeCommandList_ShouldSucceed() {
-        ArrayList<String> commands = createCommandList();
+        ArrayList<CommandEnum> commands = createCommandList();
         roverServiceTest.executeCommandList(commands);
-        assertEquals(0, roverDto.getX());
-        assertEquals(2, roverDto.getY());
-        assertEquals(N.getDirection().getClass(), roverDto.getDirection().getClass());
+        assertEquals(0, rover.getX());
+        assertEquals(2, rover.getY());
+        assertEquals(N.getDirection().getClass(), rover.getDirection().getClass());
     }
 }

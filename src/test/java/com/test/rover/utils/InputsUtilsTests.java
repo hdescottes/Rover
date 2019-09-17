@@ -1,8 +1,9 @@
 package com.test.rover.utils;
 
 import com.test.rover.CommonTests;
+import com.test.rover.constant.CommandEnum;
 import com.test.rover.model.PlateauDto;
-import com.test.rover.model.RoverDto;
+import com.test.rover.model.Rover;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import static com.test.rover.constant.CommandEnum.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class InputsUtilsTests extends CommonTests {
@@ -43,20 +45,20 @@ class InputsUtilsTests extends CommonTests {
     @Test
     void parsePositionInput_ShouldSucceed() {
         String positionInput = "1 2 N";
-        RoverDto roverDtoOutput = InputsUtils.parsePositionInput(positionInput, createPlateau());
+        Rover roverOutput = InputsUtils.parsePositionInput(positionInput, createPlateau());
 
-        assertEquals(1, roverDtoOutput.getX());
-        assertEquals(2, roverDtoOutput.getY());
-        assertEquals('N', roverDtoOutput.getDirection().getClass().getSimpleName().charAt(0));
+        assertEquals(1, roverOutput.getX());
+        assertEquals(2, roverOutput.getY());
+        assertEquals('N', roverOutput.getDirection().getClass().getSimpleName().charAt(0));
     }
 
     @Test
     void parseCommandInput_ShouldSucceed() {
         String commandInput = "LMLMRMLMM";
-        ArrayList<String> commandOutput = InputsUtils.parseCommandInput(commandInput);
+        ArrayList<CommandEnum> commandOutput = InputsUtils.parseCommandInput(commandInput);
 
-        assertEquals("LEFT", commandOutput.get(2));
-        assertEquals("RIGHT", commandOutput.get(4));
-        assertEquals("FORWARD", commandOutput.get(7));
+        assertEquals(L, commandOutput.get(2));
+        assertEquals(R, commandOutput.get(4));
+        assertEquals(M, commandOutput.get(7));
     }
 }

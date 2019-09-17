@@ -1,18 +1,24 @@
 package com.test.rover.constant;
 
+import com.test.rover.model.Rover;
+
+import java.util.function.Consumer;
+
 /**
  * Constants used for the different possible command
  */
 public enum CommandEnum {
 
-    L("LEFT"),
-    R("RIGHT"),
-    M("FORWARD");
+    L("LEFT", Rover::turnLeft),
+    R("RIGHT", Rover::turnRight),
+    M("FORWARD", Rover::goForward);
 
     private String name;
+    private Consumer<Rover> action;
 
-    CommandEnum(String name) {
+    CommandEnum(String name, Consumer<Rover> action) {
         this.name = name;
+        this.action = action;
     }
 
     public String getName() {
@@ -23,4 +29,7 @@ public enum CommandEnum {
         this.name = name;
     }
 
+    public void doAction(Rover rover) {
+        action.accept(rover);
+    }
 }

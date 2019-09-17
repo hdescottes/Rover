@@ -1,7 +1,8 @@
 package com.test.rover;
 
+import com.test.rover.constant.CommandEnum;
 import com.test.rover.model.PlateauDto;
-import com.test.rover.model.RoverDto;
+import com.test.rover.model.Rover;
 import com.test.rover.service.RoverService;
 import com.test.rover.utils.InputsUtils;
 import com.test.rover.utils.LocationUtils;
@@ -28,11 +29,11 @@ public class TestRoverApplication {
         System.out.println("\n" + "Output:" + "\n");
         PlateauDto plateauDto = InputsUtils.parsePlateauInput(inputFileAsList.get(0));
         for (int i = 0; i < roverInput.size(); i += 2) {
-            RoverDto roverDto = InputsUtils.parsePositionInput(roverInput.get(i), plateauDto);
-            RoverService roverService = new RoverService(roverDto);
-            ArrayList<String> commands = InputsUtils.parseCommandInput(roverInput.get(i + 1));
+            Rover rover = InputsUtils.parsePositionInput(roverInput.get(i), plateauDto);
+            RoverService roverService = new RoverService(rover);
+            ArrayList<CommandEnum> commands = InputsUtils.parseCommandInput(roverInput.get(i + 1));
             roverService.executeCommandList(commands);
-            System.out.println(LocationUtils.showLocation(roverDto));
+            System.out.println(LocationUtils.showLocation(rover));
         }
     }
 }

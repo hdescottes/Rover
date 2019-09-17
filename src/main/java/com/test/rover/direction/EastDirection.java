@@ -1,21 +1,21 @@
 package com.test.rover.direction;
 
-import com.test.rover.model.RoverDto;
+import com.test.rover.model.Rover;
 
 public class EastDirection implements Direction {
 
     @Override
-    public Direction spinRight(RoverDto roverDto) {
+    public Direction spinRight(Rover rover) {
         return new SouthDirection();
     }
 
     @Override
-    public Direction spinLeft(RoverDto roverDto) {
+    public Direction spinLeft(Rover rover) {
         return new NorthDirection();
     }
 
     @Override
-    public void moveForward(RoverDto roverDto) {
-        roverDto.setX(roverDto.getX() + 1);
+    public void moveForward(Rover rover) {
+        rover.setX(rover.getX() + 1);
     }
 }
