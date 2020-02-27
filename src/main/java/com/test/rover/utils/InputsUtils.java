@@ -2,7 +2,7 @@ package com.test.rover.utils;
 
 import com.test.rover.constant.CommandEnum;
 import com.test.rover.direction.DirectionEnum;
-import com.test.rover.model.PlateauDto;
+import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 
 import java.io.IOException;
@@ -21,16 +21,16 @@ public class InputsUtils {
         return Files.lines(Paths.get(fileLocation)).collect(Collectors.toList());
     }
 
-    public static PlateauDto parsePlateauInput(String plateauInput) {
+    public static Plateau parsePlateauInput(String plateauInput) {
         String[] inputArray = plateauInput.split(" ");
         LocationUtils.checkPlateau(inputArray);
-        return new PlateauDto(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]));
+        return new Plateau(Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]));
     }
 
-    public static Rover parsePositionInput(String positionInput, PlateauDto plateauDto) {
+    public static Rover parsePositionInput(String positionInput, Plateau plateau) {
         String[] inputArray = positionInput.split(" ");
-        LocationUtils.checkPosition(inputArray, plateauDto);
-        return new Rover(plateauDto, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), DirectionEnum.valueOf(inputArray[2]).getDirection());
+        LocationUtils.checkPosition(inputArray, plateau);
+        return new Rover(plateau, Integer.parseInt(inputArray[0]), Integer.parseInt(inputArray[1]), DirectionEnum.valueOf(inputArray[2]).getDirection());
     }
 
     public static ArrayList<CommandEnum> parseCommandInput(String command) {

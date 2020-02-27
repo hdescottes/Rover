@@ -1,6 +1,6 @@
 package com.test.rover.utils;
 
-import com.test.rover.model.PlateauDto;
+import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 
 /**
@@ -18,8 +18,8 @@ public class LocationUtils {
         }
     }
 
-    static void checkPosition(String[] inputArray, PlateauDto plateauDto) {
-        if (inputArray[0].isEmpty() || inputArray[1].isEmpty() || Integer.parseInt(inputArray[0]) > plateauDto.getUpperX() || Integer.parseInt(inputArray[1]) > plateauDto.getUpperY()) {
+    static void checkPosition(String[] inputArray, Plateau plateau) {
+        if (inputArray[0].isEmpty() || inputArray[1].isEmpty() || Integer.parseInt(inputArray[0]) > plateau.getUpperX() || Integer.parseInt(inputArray[1]) > plateau.getUpperY()) {
             throw new IllegalArgumentException("The rover's coordinates must not be null or beyond plateau's ones");
         }
     }

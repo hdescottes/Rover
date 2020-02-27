@@ -2,7 +2,7 @@ package com.test.rover;
 
 import com.test.rover.constant.CommandEnum;
 import com.test.rover.direction.Direction;
-import com.test.rover.model.PlateauDto;
+import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 
 import java.util.ArrayList;
@@ -16,8 +16,8 @@ public class CommonTests {
     protected int x = 1;
     protected int y = 2;
 
-    protected PlateauDto createPlateau() {
-        return new PlateauDto(upperX, upperY);
+    protected Plateau createPlateau() {
+        return new Plateau(upperX, upperY);
     }
 
     protected Rover createRover(Direction direction) {

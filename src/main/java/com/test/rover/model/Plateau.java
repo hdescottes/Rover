@@ -3,13 +3,13 @@ package com.test.rover.model;
 /**
  * Business model for the plateau
  */
-public class PlateauDto {
+public class Plateau {
 
     private int upperX;
 
     private int upperY;
 
-    public PlateauDto(int upperX, int upperY) {
+    public Plateau(int upperX, int upperY) {
         this.upperX = upperX;
         this.upperY = upperY;
     }

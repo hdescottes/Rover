@@ -2,7 +2,7 @@ package com.test.rover.utils;
 
 import com.test.rover.CommonTests;
 import com.test.rover.constant.CommandEnum;
-import com.test.rover.model.PlateauDto;
+import com.test.rover.model.Plateau;
 import com.test.rover.model.Rover;
 import org.junit.jupiter.api.Test;
 
@@ -34,12 +34,12 @@ class InputsUtilsTests extends CommonTests {
     @Test
     void parsePlateauInput_ShouldSucceed() {
         String plateauInput = "5 5";
-        PlateauDto plateauDtoOutput = InputsUtils.parsePlateauInput(plateauInput);
+        Plateau plateauOutput = InputsUtils.parsePlateauInput(plateauInput);
 
-        assertEquals(0, plateauDtoOutput.getOriginX());
-        assertEquals(0, plateauDtoOutput.getOriginY());
-        assertEquals(5, plateauDtoOutput.getUpperX());
-        assertEquals(5, plateauDtoOutput.getUpperY());
+        assertEquals(0, plateauOutput.getOriginX());
+        assertEquals(0, plateauOutput.getOriginY());
+        assertEquals(5, plateauOutput.getUpperX());
+        assertEquals(5, plateauOutput.getUpperY());
     }
 
     @Test
