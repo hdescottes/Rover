@@ -5,6 +5,9 @@
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
 
+val jUnitJupiterVersion by extra {"5.6.0"}
+val assertjVersion by extra {"3.15.0"}
+
 plugins {
     java
 }
@@ -20,7 +23,7 @@ tasks.named<Test>("test") {
 }
 
 dependencies {
-    testImplementation("org.junit.jupiter:junit-jupiter-api:5.5.2")
-    testImplementation("org.assertj:assertj-core:3.8.0")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.5.2")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitJupiterVersion")
+    testImplementation("org.assertj:assertj-core:$assertjVersion")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitJupiterVersion")
 }
